@@ -16,7 +16,8 @@
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"web-dev-server\"",
     "build": "tsc && npm run analyze -- --exclude dist",
     "prepublish": "tsc && npm run analyze -- --exclude dist",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@lion/button": "^0.18.1",
@@ -37,5 +38,5 @@
     "tslib": "^2.6.3",
     "typescript": "^5.5.3"
   },
-  "customElements": "custom-elements.json"
+  "customElements": "custom-elements.json"  
 }
