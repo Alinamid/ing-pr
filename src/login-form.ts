@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { property } from 'lit/decorators.js';
+import '@lion/input/define';
+import '@lion/button/define';
 
 export class LoginForm extends LitElement {
   static styles = css`
@@ -15,30 +17,9 @@ export class LoginForm extends LitElement {
     .form-group {
       margin-bottom: 1rem;
     }
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    input {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
     .error {
       color: red;
       font-size: 0.875rem;
-    }
-    button {
-      padding: 0.5rem 1rem;
-      background-color: #6200ea;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #3700b3;
     }
   `;
 
@@ -78,6 +59,14 @@ export class LoginForm extends LitElement {
     if (this._validatePassword(this.password)) {
       console.log(`Your Username is: ${this.username}`);
       console.log(`Your Password is: ${this.password}`);
+
+      const main = document.querySelector('main');
+      if (main) {
+        main.innerHTML = '';
+        const welcomePage = document.createElement('welcome-page') as HTMLElement;
+        (welcomePage as any).username = this.username; 
+        main.appendChild(welcomePage);
+      }
     }
   }
 
@@ -88,27 +77,29 @@ export class LoginForm extends LitElement {
         <form @submit=${this._handleSubmit}>
           <div class="form-group">
             <label for="username">Username</label>
-            <input
+            <lion-input
               type="text"
               id="username"
               name="username"
               .value=${this.username}
               @input=${this._handleInput}
               required
-            />
+              placeholder="Enter your username"
+            ></lion-input>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input
+            <lion-input
               type="password"
               id="password"
               name="password"
               .value=${this.password}
               @input=${this._handleInput}
               required
-            />
+              placeholder="Enter your password"
+            ></lion-input>
             ${this.passwordError ? html`<div class="error">${this.passwordError}</div>` : ''}
-          </div>
+            </div>
           <button type="submit">Login</button>
         </form>
       </div>
