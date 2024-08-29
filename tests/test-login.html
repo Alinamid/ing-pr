@@ -8,26 +8,16 @@
       background: #fafafa;
       margin: 0;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    main {
-      flex-grow: 1;
-      padding: 1rem;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
   </style>
 </head>
 <body>
-  <my-header></my-header>
-  <main>
-    <login-form></login-form>
-  </main>
-  <my-footer></my-footer>
+  <login-form></login-form>
+
   <script type="module">
-    import '../dist/src/ing-pr.js';
-    import '../dist/src/my-header.js';
-    import '../dist/src/my-footer.js';
     import '../dist/src/login-form.js';
   </script>
 </body>
