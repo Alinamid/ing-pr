@@ -8,14 +8,19 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
 npm i ing-pr
 ```
 
-## Usage
+## Usage Include the library in your HTML file and use the components:
 
 ```html
-<script type="module">
-  import 'ing-pr/ing-pr.js';
-</script>
-
-<ing-pr></ing-pr>
+<body>
+  <my-header></my-header>
+  <main>
+    <login-form></login-form>
+  </main>
+  <my-footer></my-footer>
+  <script type="module">
+    import 'ing-pr/ing-pr.js';
+  </script>
+</body>
 ```
 
 
@@ -29,7 +34,7 @@ If you customize the configuration a lot, you can consider moving them to indivi
 ## Local Demo with `web-dev-server`
 
 ```bash
-npm start
+npm run start
 ```
 
 To run a local development server that serves the basic demo located in `demo/index.html`
