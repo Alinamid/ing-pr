@@ -35,8 +35,8 @@
     "babel-jest": "^29.7.0",
     "concurrently": "^8.2.2",
     "jest": "^29.7.0",
-    "tslib": "^2.6.3",
+    "tslib": "^2.7.0",
     "typescript": "^5.5.3"
   },
-  "customElements": "custom-elements.json"  
+  "customElements": "custom-elements.json"
 }

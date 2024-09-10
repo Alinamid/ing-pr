@@ -10,8 +10,8 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "outDir": "dist",
-    "sourceMap": true,
+    "outDir": "./dist",
+    "sourceMap": true,  
     "inlineSources": true,
     "rootDir": "./",
     "declaration": true,
@@ -19,5 +19,8 @@
     "skipLibCheck": true
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
